@@ -1034,7 +1034,7 @@
 	.before-after-container .before-after-detail{position:relative!important;transform:none;margin:0 auto;text-align:center;padding-bottom:35px;top:auto;left:auto!important;right:auto!important;z-index:15;}
 	.before-after-container .image-after .before-after-detail{text-align:center;}
 	.before-after-container .before-after-detail--sub p{font-size:18px;line-height:normal;}
-	.before-after-container .slider-button{width:40px;height:40px;top:calc(50% + 20px);}
+	.before-after-container .slider-button{width:40px;height:40px;top:calc(50% + 20px);}	
 	
 	.page-title h1{font-size:35px;margin:0;line-height:1}
 	.product-section{padding-bottom:25px;min-height:calc(100vh - 140px);}

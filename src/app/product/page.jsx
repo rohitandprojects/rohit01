@@ -35,17 +35,21 @@ const Product = () => {
 
       BAcontainer.addEventListener('touchstart', (e) => {
         e.preventDefault();
+        const touch = e.touches[0];
+        const xPercent = parseInt(touch.pageX / window.innerWidth * 100);
+        BAcontainer.style.setProperty('--position', `${xPercent}%`);
       }, { passive: false });
 
       BAcontainer.addEventListener('touchmove', (e) => {
         e.preventDefault();
         const touch = e.touches[0];
         const xPercent = parseInt(touch.pageX / window.innerWidth * 100);
-        BAcontainer.style.setProperty('--position', `${100 - xPercent}%`);
+        BAcontainer.style.setProperty('--position', `${xPercent}%`);
       }, { passive: false });
 
       BAcontainer.addEventListener('touchend', (e) => {
         e.preventDefault();
+        
       }, { passive: false });
       
     }else{
@@ -104,7 +108,9 @@ const Product = () => {
                       }  
                       srcset="/_next/image?url=%2Fimages%2Felement-1.webp&w=64&q=75 1x, /_next/image?url=%2Fimages%2Felement-1.webp&w=128&q=75 2x"
                       */}
-											<p>Add the taste of purity to all your<br/> exquisite cuisines. Because life me<br/> “FEEKA MANA HAI”</p>
+                      <div className="dom-int-text">
+											  <p>Add the taste of purity to all your<br/> exquisite cuisines. Because life me<br/> “FEEKA MANA HAI”</p>
+                      </div>
                       <div className="learn-more-div">
                           <CategoryFirstDomestic linkName={'Learn More'} className={`view-job-offers-link position-relative`}></CategoryFirstDomestic>
                       </div>
@@ -125,7 +131,9 @@ const Product = () => {
 									<div className="before-after-detail position-absolute">
 										<div className="before-after-detail--sub">
 											<h2>International Range</h2>
-											<p>Gracing people world-wide with<br/> our spices and associated<br/> products.</p>
+                      <div className="dom-int-text">
+  											<p>Gracing people world-wide with<br/> our spices and associated<br/> products.</p>
+                      </div>
 											<div className="learn-more-div">
                           <CategoryFirstInternational linkName={'Learn More'} className={`view-job-offers-link position-relative`}></CategoryFirstInternational>                        
                           {/* <Link href={'/product/international'}  className="view-job-offers-link position-relative">Learn More</Link> */}
