@@ -263,7 +263,7 @@ const AnimatedClientComponentInter = ({ post, matchCateName, getAllPost }) => {
           // console.log('iniFlag:- true true');
           return () => clearTimeout(timerFlag);
         }
-      }, 3000);
+      }, 2000);
     }
     const handleScroll = () => {
       if (
@@ -304,7 +304,7 @@ const AnimatedClientComponentInter = ({ post, matchCateName, getAllPost }) => {
             //console.log('iniFlag:- timer3 true');
             return () => clearTimeout(timer3);
           }
-        }, 3000);
+        }, 2000);
       }
       else{
         routers.push(`/product/international-detail/${getAllPost[0]?.id}`);
@@ -315,7 +315,7 @@ const AnimatedClientComponentInter = ({ post, matchCateName, getAllPost }) => {
             //console.log('iniFlag:- timer4 true');
             return () => clearTimeout(timer4);
           }
-        }, 3000);
+        }, 2000);
       }
       
       //console.log(nextCategory);
@@ -329,9 +329,10 @@ const AnimatedClientComponentInter = ({ post, matchCateName, getAllPost }) => {
     };
 
     // Add scroll event listener when component mounts
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
       // Cleanup function to kill scroll triggers on component unmount
       return () => {
+        window.removeEventListener('scroll', handleScroll);
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }, [post]);

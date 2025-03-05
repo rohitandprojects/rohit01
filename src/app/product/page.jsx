@@ -34,7 +34,7 @@ const Product = () => {
       }
 
       BAcontainer.addEventListener('touchstart', (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const touch = e.touches[0];
         const xPercent = parseInt(touch.pageX / window.innerWidth * 100);
         BAcontainer.style.setProperty('--position', `${xPercent}%`);
@@ -48,7 +48,7 @@ const Product = () => {
       }, { passive: false });
 
       BAcontainer.addEventListener('touchend', (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         
       }, { passive: false });
       
